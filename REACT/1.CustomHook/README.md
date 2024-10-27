@@ -26,3 +26,9 @@
 - The CSS for the component is added in index.css. [ google: `css loader generator` website: https://10015.io/tools/css-loader-generator]
 - The Spinner visibility is controlled using the useState hook, with a state value that toggles between true and false—true when an API call is in progress, and false when data is received. [ Random.jsx ]
 - The Spinner component is conditionally rendered, showing when the state value is true and hiding when it’s false.
+
+### Custom Hook:
+
+- The custom hook naming shall start from the `use` keyword
+- The custom hook must contains atleast one of the React hook otherwise, it is not called as custom hook
+- The hook is the react function not the component hence it does not return any JSX
