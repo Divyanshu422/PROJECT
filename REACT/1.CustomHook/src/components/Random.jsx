@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Spinner from "./Spinner";
 
 const Random = () => {
   const [gif, setGif] = useState("");
+  const [spinner, setSpinner] = useState(true);
   const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
   const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
   const clickHandler = async () => {
+    setSpinner(true);
     const response = await axios.get(url);
     setGif(response?.data?.data?.images?.downsized_large?.url);
+    setSpinner(false);
   };
 
   useEffect(() => {
     clickHandler();
   }, []);
-  return (
+  return spinner ? (
+    <Spinner />
+  ) : (
     <div className="flex flex-col px-4 rounded-lg border-1 border-black w-6/12 bg-green-500 mt-4 gap-2 items-center">
       <h1 className="py-4 text-2xl font-bold underline">A Random GIF</h1>
       <img src={gif} className="w-[450px]" />

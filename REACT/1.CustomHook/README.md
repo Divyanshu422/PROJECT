@@ -19,3 +19,10 @@
 ### Method used by the axios():
 
 - get('url'): for getting the url
+
+### Adding the Spinner
+
+- I created a component named Spinner, which has a className of Spinner.
+- The CSS for the component is added in index.css.
+- The Spinner visibility is controlled using the useState hook, with a state value that toggles between true and false—true when an API call is in progress, and false when data is received. [ Random.jsx ]
+- The Spinner component is conditionally rendered, showing when the state value is true and hiding when it’s false.
