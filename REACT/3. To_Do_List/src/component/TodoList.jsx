@@ -19,7 +19,15 @@ const TodoList = () => {
       setNewTask("");
     }
   };
-  const deleteTask = (index) => {};
+  const deleteTask = (key) => {
+    // In this code block, we will remove a task from the `tasks` state variable.
+    // To do this, we create a new array called `updatedTasks`, which includes all items except the one at the specified delete index. [Filter method]
+    // We then assign `updatedTasks` back to the `tasks` state variable to update the list.
+    const updateTask = tasks.filter((task, index) => {
+      return index !== key;
+    });
+    setTasks(updateTask);
+  };
   const moveTaskUp = (index) => {};
   const moveTaskDown = (index) => {};
 
