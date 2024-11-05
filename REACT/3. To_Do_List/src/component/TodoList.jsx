@@ -28,7 +28,23 @@ const TodoList = () => {
     });
     setTasks(updateTask);
   };
-  const moveTaskUp = (index) => {};
+  const moveTaskUp = (index) => {
+    // Check if the current index is greater than 0; only then swapping is allowed
+    // (since the first item has no item above it).
+    if (index > 0) {
+      // Create a new array `updatedArray` by copying the current tasks array.
+      const updatedArray = [...tasks];
+
+      // Swap the item at `index` with the item directly above it (`index - 1`).
+      [updatedArray[index], updatedArray[index - 1]] = [
+        updatedArray[index - 1],
+        updatedArray[index],
+      ];
+
+      // Update the tasks state with the modified `updatedArray`.
+      setTasks(updatedArray);
+    }
+  };
   const moveTaskDown = (index) => {};
 
   return (
