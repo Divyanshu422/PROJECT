@@ -11,14 +11,19 @@ const TodoList = () => {
   const handleChange = (event) => {
     setNewTask(event.target.value);
   };
-  const handleAdd = () => {};
+  const handleAdd = () => {
+    // we need to add the task in the handleButton
+    setTasks((prev) => [...prev, newTask]);
+    // After adding the task we set the input box to empty string:
+    setNewTask("");
+  };
   const deleteTask = (index) => {};
   const moveTaskUp = (index) => {};
   const moveTaskDown = (index) => {};
 
   return (
-    <div className="flex flex-col items-center mt-24 font-serif">
-      <div className="w-96 p-4 bg-blue-50 shadow-lg rounded-lg">
+    <div className="flex flex-col h-screen items-center justify-center font-serif">
+      <div className="w-96 p-4 bg-red-50 shadow-lg rounded-lg">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">ToDo-List</h1>
         <div className="flex mb-4">
           <input
