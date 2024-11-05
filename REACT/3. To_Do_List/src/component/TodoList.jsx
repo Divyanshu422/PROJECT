@@ -45,7 +45,19 @@ const TodoList = () => {
       setTasks(updatedArray);
     }
   };
-  const moveTaskDown = (index) => {};
+  const moveTaskDown = (index) => {
+    // Check if the current index is less than the last index of the tasks array.
+    if (index < tasks.length - 1) {
+      // Create a new array `updatedArray` by copying the current tasks array.
+      const updatedArray = [...tasks];
+      [updatedArray[index], updatedArray[index + 1]] = [
+        updatedArray[index + 1],
+        updatedArray[index],
+      ];
+
+      setTasks(updatedArray);
+    }
+  };
 
   return (
     <div className="flex flex-col h-screen items-center justify-center font-serif">
