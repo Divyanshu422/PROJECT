@@ -12,10 +12,12 @@ const TodoList = () => {
     setNewTask(event.target.value);
   };
   const handleAdd = () => {
-    // we need to add the task in the handleButton
-    setTasks((prev) => [...prev, newTask]);
-    // After adding the task we set the input box to empty string:
-    setNewTask("");
+    if (newTask.trim() !== "") {
+      // we need to add the task in the handleButton
+      setTasks((prev) => [...prev, newTask]);
+      // After adding the task we set the input box to empty string:
+      setNewTask("");
+    }
   };
   const deleteTask = (index) => {};
   const moveTaskUp = (index) => {};
