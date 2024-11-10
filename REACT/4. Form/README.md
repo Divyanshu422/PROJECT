@@ -6,3 +6,7 @@
 
 - FontAwesome provide the svgs =
 - need to install 3 dependencies to install fontAwesome
+
+### For the blind people -> following `attribute` [not class] is used:
+
+- aria-live = 'assertive'
