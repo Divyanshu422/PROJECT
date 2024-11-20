@@ -53,6 +53,11 @@ let highScore = 0;
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 document.querySelector('.number').textContent = '?';
 
+// ! More refactoring in the code:
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
+
 // ! STEP 1: adding the event listner to the button on the UI
 // ! STEP 3: Adding the cases to the event listner
 document.querySelector('.check').addEventListener('click', () => {
@@ -62,11 +67,13 @@ document.querySelector('.check').addEventListener('click', () => {
   // Adding the corner cases ->
   // case 1: if there is no guess number and user clicked on the button
   if (!guessNumber) {
-    document.querySelector('.message').textContent = '⛔️ Enter the number ';
+    // document.querySelector('.message').textContent = '⛔️ Enter the number ';
+    displayMessage('⛔️ Enter the number ');
   }
   // case 2: if the guess number == the secret number'
   else if (guessNumber === secretNumber) {
-    document.querySelector('.message').textContent = '🎉 Correct Number!';
+    // document.querySelector('.message').textContent = '🎉 Correct Number!';
+    displayMessage('🎉 Correct Number!');
     // Displaying the secret number:
     document.querySelector('.number').textContent = secretNumber;
     // document.querySelector('body').style = 'background-color: green';
@@ -107,12 +114,12 @@ document.querySelector('.check').addEventListener('click', () => {
   else {
     if (score > 0) {
       guessNumber < secretNumber
-        ? (document.querySelector('.message').textContent = '📉 Too Low!')
-        : (document.querySelector('.message').textContent = '📈 Too High!');
+        ? displayMessage('📉 Too Low!')
+        : displayMessage('📈 Too High!');
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = '�� You lost the game!';
+      displayMessage('�� You lost the game!');
       document.querySelector('.score').textContent = 0;
       document.querySelector('.check').disabled = true;
     }
