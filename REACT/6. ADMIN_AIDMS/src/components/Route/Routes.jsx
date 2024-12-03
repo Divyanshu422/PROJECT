@@ -2,7 +2,10 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignIn from "../Login/Pages/SignIn";
 import SignInOTP from "../Login/Pages/SignInOTP";
+import AdminProtectedRoutes from "../../utils/ProtectedRoutes/AdminProtectedRoutes";
+import AdminDashboard from "../Admin_Module/component/AdminDashboard/Dashboard";
 const Routes = () => {
+  console.log("Routes");
   const appRouter = createBrowserRouter([
     {
       path: "/",
