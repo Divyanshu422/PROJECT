@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import ThemeContextProvider from "./contextAPI/ThemeContext";
 import { AuthProvider } from "./contextAPI/AuthContext";
+import { SideBarToggleProvider } from "./contextAPI/SideBarToggleContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthProvider>
     <ThemeContextProvider>
-      <App />
+      <SideBarToggleProvider>
+        <App />
+      </SideBarToggleProvider>
     </ThemeContextProvider>
   </AuthProvider>
 );
