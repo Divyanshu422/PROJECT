@@ -24,7 +24,7 @@ function SideBar() {
       id: 1,
       icon: <LaptopMinimalCheck size={30} />,
       text: "Dashboard",
-      link: "/",
+      link: "/admin/dashboard",
     },
     {
       id: 2,
@@ -48,18 +48,18 @@ function SideBar() {
       id: 5,
       icon: <GraduationCap size={30} />,
       text: "Master Management",
-      link: "",
+      link: "/admin/dashboard/",
       isExpandable: true,
       subOptions: [
-        { id: "5-1", text: "Salutation Master", link: "/master/courses" },
+        { id: "5-1", text: "Salutation Master", link: "salutation" },
         {
           id: "5-2",
           text: "Organization Type Master",
-          link: "/master/organization-types",
+          link: "organization",
         },
-        { id: "5-3", text: "Country Master", link: "/master/countries" },
-        { id: "5-4", text: "State Master", link: "/master/states" },
-        { id: "5-5", text: "District Master", link: "/master/districts" },
+        { id: "5-3", text: "Country Master", link: "country" },
+        { id: "5-4", text: "State Master", link: "state" },
+        { id: "5-5", text: "District Master", link: "district" },
       ],
     },
   ];
