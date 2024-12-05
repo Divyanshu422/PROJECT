@@ -1,6 +1,6 @@
 import axios from "axios";
 import { refreshAccessToken } from "./authService";
-import { getToken, storeToken } from "../utlis/TokenStorage";
+import { getToken, storeToken } from "../utils/TokenStorage";
 
 // Function to logout the user
 const logoutUser = () => {

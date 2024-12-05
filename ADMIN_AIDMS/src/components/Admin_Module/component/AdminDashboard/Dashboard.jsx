@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex max-h-screen">
       {/* Sidebar */}
       <SideBar className="w-64 bg-gray-800 text-white fixed h-full z-10" />
 
@@ -21,7 +21,7 @@ const Dashboard = () => {
         </div>
 
         {/* Footer */}
-        <AdminFooter className="bg-gray-200 mt-auto" />
+        <AdminFooter className="fixed bg-gray-200 mt-auto" />
       </div>
     </div>
   );

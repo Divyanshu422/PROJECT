@@ -8,8 +8,10 @@ import {
   UserCheck,
   Columns3,
   GraduationCap,
+  Bot,
   ChevronDown,
   ChevronUp,
+  MdBloodtype,
 } from "lucide-react";
 import { SideBarToggleContext } from "../../../contextAPI/SideBarToggleContext";
 import { ThemeContext } from "../../../contextAPI/ThemeContext";
@@ -31,6 +33,11 @@ function SideBar() {
       icon: <Building2 size={30} />,
       text: "Organization Management",
       link: "/organization",
+      isExpandable: true,
+      subOptions: [
+        { id: "2-1", text: "Department Master", link: "" },
+        // { id: "2-2", text: "Bot Answer", link: "botanswer" },
+      ],
     },
     {
       id: 3,
@@ -60,6 +67,18 @@ function SideBar() {
         { id: "5-3", text: "Country Master", link: "country" },
         { id: "5-4", text: "State Master", link: "state" },
         { id: "5-5", text: "District Master", link: "district" },
+        { id: "5-6", text: "Blood Group", link: "blood" },
+      ],
+    },
+    {
+      id: 6,
+      icon: <Bot size={30} />,
+      text: "ChatBot Management",
+      link: "/admin/dashboard/",
+      isExpandable: true,
+      subOptions: [
+        { id: "6-1", text: "Bot Question", link: "botquestion" },
+        { id: "6-2", text: "Bot Answer", link: "botanswer" },
       ],
     },
   ];
